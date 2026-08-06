@@ -8,7 +8,7 @@
 
 ### 质量控制复核人（EQR）与签字审计师工作联结（WORKTIE，2020–2024）
 
-复刻论文：Qi, Seidel, Zhang & Zhang (2026), *Do Engagement Quality Reviewers' Workplace Ties with Engagement Partners Influence Audit Quality?*, Journal of Accounting Research.
+参考文献：Qi, Seidel, Zhang & Zhang (2026), *Do Engagement Quality Reviewers' Workplace Ties with Engagement Partners Influence Audit Quality?*, Journal of Accounting Research.
 
 以**公司-年度** 为观测单位，构建质量控制复核人（EQR）与签字项目合伙人的**既往共事经历（WORKTIE）** 变量：
 
