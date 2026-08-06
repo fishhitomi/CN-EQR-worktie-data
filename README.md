@@ -6,7 +6,7 @@
 
 本仓库目前包含以下数据集：
 
-### EQR 与审计合伙人工作联结（WORKTIE，2020–2024）
+### 质量控制复核人（EQR）与签字审计师工作联结（WORKTIE，2020–2024）
 
 复刻论文：Qi, Seidel, Zhang & Zhang (2026), *Do Engagement Quality Reviewers' Workplace Ties with Engagement Partners Influence Audit Quality?*, Journal of Accounting Research.
 
