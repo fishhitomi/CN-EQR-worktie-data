@@ -18,7 +18,7 @@ spec = importlib.util.spec_from_file_location(
 ext = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ext)
 
-OUT_DIR = os.path.join(BASE, "02_中间数据", "EQR提取")
+OUT_DIR = os.path.join(BASE, "01_中间数据", "EQR提取")
 
 def scan(row):
     aid = str(row["announcementId"]) if row.get("announcementId") else ""
@@ -43,7 +43,7 @@ def scan(row):
 
 def main():
     ext.NAME_SET = ext.load_name_sets()
-    df = pd.read_csv(os.path.join(BASE, "02_中间数据", "EQR提取", "EQR_公告级.csv"),
+    df = pd.read_csv(os.path.join(BASE, "01_中间数据", "EQR提取", "EQR_公告级.csv"),
                      encoding="utf-8-sig", dtype={"secCode": str})
     miss = df[df["eqr"].isna() | (df["eqr"].astype(str).str.strip() == "")].copy()
     # 优先处理标题可能含 EQR 的公告，其余也扫

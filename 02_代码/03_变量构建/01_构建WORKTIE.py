@@ -19,7 +19,7 @@ import pandas as pd
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CSMAR = os.path.join(BASE, "00_原始数据", "CSMAR")
 CM_DIR = os.path.join(CSMAR, "资本市场项目")
-OUT = os.path.join(BASE, "02_中间数据", "WORKTIE")
+OUT = os.path.join(BASE, "01_中间数据", "WORKTIE")
 os.makedirs(OUT, exist_ok=True)
 
 PLACEHOLDER = {"没有单位", "无", "暂无", "未披露", "不适用", "待定", "nan", "None", ""}
@@ -303,7 +303,7 @@ def dedupe_hits(hits):
     return out
 
 print("汇总 EQR 公司-年度 ...")
-eqr = pd.read_csv(os.path.join(BASE, "02_中间数据", "EQR提取", "EQR_公告级.csv"),
+eqr = pd.read_csv(os.path.join(BASE, "01_中间数据", "EQR提取", "EQR_公告级.csv"),
                   encoding="utf-8-sig", dtype={"secCode": str})
 eqr["code6"] = eqr["secCode"].str.zfill(6)
 eqr["year"] = pd.to_numeric(eqr["audit_year"], errors="coerce")

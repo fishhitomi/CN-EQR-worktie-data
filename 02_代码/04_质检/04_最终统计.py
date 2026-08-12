@@ -1,7 +1,7 @@
 import os, pandas as pd
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-out = pd.read_csv(os.path.join(BASE, "02_中间数据", "WORKTIE", "WORKTIE_2020-2023.csv"),
+out = pd.read_csv(os.path.join(BASE, "01_中间数据", "WORKTIE", "WORKTIE_2020-2023.csv"),
                   encoding="utf-8-sig", dtype={"stkcd": str})
 cov = out[out["eqr_name"].notna() & (out["eqr_name"].astype(str) != "")].copy()
 print("总样本(2020-2023 A股):", len(out))

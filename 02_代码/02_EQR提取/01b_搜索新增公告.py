@@ -7,7 +7,7 @@ import os, subprocess, sys
 import pandas as pd
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-OUT_DIR = os.path.join(BASE, "02_中间数据", "巨潮公告清单")
+OUT_DIR = os.path.join(BASE, "01_中间数据", "巨潮公告清单")
 SCRIPT = os.path.join(BASE, "02_代码", "02_EQR提取", "01_搜索公告清单.py")
 
 SEGMENTS = [

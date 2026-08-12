@@ -1,9 +1,9 @@
 import os, pandas as pd
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-out = pd.read_csv(os.path.join(BASE, "02_中间数据", "WORKTIE", "WORKTIE_2020-2023.csv"),
+out = pd.read_csv(os.path.join(BASE, "01_中间数据", "WORKTIE", "WORKTIE_2020-2023.csv"),
                   encoding="utf-8-sig", dtype={"stkcd": str})
-ann = pd.read_csv(os.path.join(BASE, "02_中间数据", "EQR提取", "EQR_公告级.csv"),
+ann = pd.read_csv(os.path.join(BASE, "01_中间数据", "EQR提取", "EQR_公告级.csv"),
                   encoding="utf-8-sig", dtype={"secCode": str})
 ann["has_eqr"] = ann["eqr"].notna() & (ann["eqr"].astype(str).str.strip() != "")
 ann["date"] = pd.to_datetime(ann["date"], errors="coerce")

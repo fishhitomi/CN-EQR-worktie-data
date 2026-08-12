@@ -8,9 +8,9 @@ BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--base", default=os.path.join(BASE, "02_中间数据", "EQR提取", "EQR_公告级.csv"))
+    ap.add_argument("--base", default=os.path.join(BASE, "01_中间数据", "EQR提取", "EQR_公告级.csv"))
     ap.add_argument("--new", required=True)
-    ap.add_argument("--out", default=os.path.join(BASE, "02_中间数据", "EQR提取", "EQR_公告级.csv"))
+    ap.add_argument("--out", default=os.path.join(BASE, "01_中间数据", "EQR提取", "EQR_公告级.csv"))
     args = ap.parse_args()
 
     base = pd.read_csv(args.base, encoding="utf-8-sig", dtype={"secCode": str})

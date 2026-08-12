@@ -11,7 +11,7 @@ import pandas as pd
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT = os.path.join(BASE, "00_原始数据", "巨潮公告", "公告PDF_全量")
 OLD = os.path.join(BASE, "00_原始数据", "巨潮公告", "公告PDF")
-FAIL = os.path.join(BASE, "02_中间数据", "巨潮公告清单", "下载失败.csv")
+FAIL = os.path.join(BASE, "01_中间数据", "巨潮公告清单", "下载失败.csv")
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
 
 def ann_id(row):
@@ -66,7 +66,7 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--list", type=str,
-                    default=os.path.join(BASE, "02_中间数据", "巨潮公告清单", "公告清单_筛选.csv"))
+                    default=os.path.join(BASE, "01_中间数据", "巨潮公告清单", "公告清单_筛选.csv"))
     args = ap.parse_args()
     df = pd.read_csv(args.list, encoding="utf-8-sig", dtype={"secCode": str})
     if args.limit:

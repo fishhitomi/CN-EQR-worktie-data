@@ -16,8 +16,8 @@ import pandas as pd
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PDF_ROOT = os.path.join(BASE, "00_原始数据", "巨潮公告", "公告PDF_全量")
 OLD_ROOT = os.path.join(BASE, "00_原始数据", "巨潮公告", "公告PDF")
-EQR_FILE = os.path.join(BASE, "02_中间数据", "EQR提取", "EQR_公告级.csv")
-OUT_DIR = os.path.join(BASE, "02_中间数据", "PDF精简")
+EQR_FILE = os.path.join(BASE, "01_中间数据", "EQR提取", "EQR_公告级.csv")
+OUT_DIR = os.path.join(BASE, "01_中间数据", "PDF精简")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # 与搜索脚本一致的精简标题规则：可用来判断“相关但未提取到 EQR”的公告

@@ -14,7 +14,7 @@ import numpy as np
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CSMAR = os.path.join(BASE, "00_原始数据", "CSMAR")
-OUT = os.path.join(BASE, "02_中间数据", "对比论文")
+OUT = os.path.join(BASE, "01_中间数据", "对比论文")
 os.makedirs(OUT, exist_ok=True)
 
 ACCR = r"os.environ.get("EARNINGS_MGMT_DIR", "")"
@@ -57,7 +57,7 @@ fin = fin.drop_duplicates(["code6", "year"])
 print("FIN_Audit 2020-2023 A股公司-年:", len(fin))
 
 print("== 2. 合并 WORKTIE 输出 ==")
-wt = pd.read_csv(os.path.join(BASE, "02_中间数据", "WORKTIE", "WORKTIE_2020-2023.csv"),
+wt = pd.read_csv(os.path.join(BASE, "01_中间数据", "WORKTIE", "WORKTIE_2020-2023.csv"),
                  encoding="utf-8-sig", dtype={"stkcd": str})
 wt = wt.rename(columns={"worktie": "WORKTIE", "worktie_eng1_eng2": "WORKTIE_ENG1_ENG2"})
 df = fin.merge(wt[["stkcd", "year", "eng1_name", "eng2_name", "eqr_name",
@@ -161,7 +161,7 @@ tenure = lst.dropna(subset=["tenure"]).sort_values("tenure", ascending=False) \
 df = df.merge(tenure, on=["code6", "year"], how="left")
 
 print("== 10. EQR 公告级（COREVIEW） ==")
-eqr_ann = pd.read_csv(os.path.join(BASE, "02_中间数据", "EQR提取", "EQR_公告级.csv"),
+eqr_ann = pd.read_csv(os.path.join(BASE, "01_中间数据", "EQR提取", "EQR_公告级.csv"),
                       encoding="utf-8-sig", dtype={"secCode": str})
 eqr_ann["code6"] = eqr_ann["secCode"].str.zfill(6)
 eqr_ann["year"] = pd.to_numeric(eqr_ann["audit_year"], errors="coerce")

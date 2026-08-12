@@ -15,7 +15,7 @@ import urllib.request, urllib.parse
 import pandas as pd
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-OUT_DIR = os.path.join(BASE, "02_中间数据", "巨潮公告清单")
+OUT_DIR = os.path.join(BASE, "01_中间数据", "巨潮公告清单")
 
 KEYWORDS = [
     "拟聘任会计师事务所",

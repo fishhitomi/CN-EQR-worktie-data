@@ -10,7 +10,7 @@ import pandas as pd
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PDF_DIR = os.path.join(BASE, "00_原始数据", "巨潮公告", "公告PDF_全量")
-OUT_DIR = os.path.join(BASE, "02_中间数据", "EQR提取")
+OUT_DIR = os.path.join(BASE, "01_中间数据", "EQR提取")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 STOP_WORDS = ["公司", "名称", "证券", "股票", "代码", "公告", "年度", "审计", "事务所",
@@ -216,10 +216,10 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--out", type=str,
-                    default=os.path.join(BASE, "02_中间数据", "EQR提取", "EQR_公告级.csv"),
+                    default=os.path.join(BASE, "01_中间数据", "EQR提取", "EQR_公告级.csv"),
                     help="输出 CSV 路径")
     ap.add_argument("--list", type=str,
-                    default=os.path.join(BASE, "02_中间数据", "巨潮公告清单", "公告清单_筛选.csv"))
+                    default=os.path.join(BASE, "01_中间数据", "巨潮公告清单", "公告清单_筛选.csv"))
     args = ap.parse_args()
     NAME_SET = load_name_sets()
     print("CPA 姓名库规模:", len(NAME_SET))
